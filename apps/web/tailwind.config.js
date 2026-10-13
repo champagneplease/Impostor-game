@@ -6,29 +6,38 @@ export default {
     extend: {
       colors: {
         dark: {
-          950: '#070a12',
-          900: '#0c111d',
-          850: '#111726',
-          800: '#172033',
-          700: '#222f4b',
-          600: '#334155',
+          950: '#060608',
+          900: '#0b0b0f',
+          850: '#121217',
+          800: '#1a1a22',
+          700: '#262630',
+          600: '#383846',
         },
+        red: {
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#b91c1c',
+          950: '#1a0507',
+        },
+        // Mapeo retrocompatible para transformar cualquier clase lime en tonos rojos
         lime: {
-          400: '#a3e635',
-          500: '#84cc16',
-          600: '#65a30d',
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
         },
         impostor: {
           red: '#ef4444',
-          lime: '#84cc16',
+          crimson: '#dc2626',
+          dark: '#060608',
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 0 25px -5px rgba(132, 204, 22, 0.3)',
-        'glow-red': '0 0 25px -5px rgba(239, 68, 68, 0.3)',
+        glow: '0 0 25px -5px rgba(239, 68, 68, 0.4)',
+        'glow-red': '0 0 25px -5px rgba(239, 68, 68, 0.5)',
       },
       animation: {
         pulseSlow: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',

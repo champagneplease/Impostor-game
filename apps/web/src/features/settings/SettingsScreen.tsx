@@ -52,7 +52,7 @@ export const SettingsScreen: React.FC = () => {
         {/* Sonidos */}
         <div className="flex items-center justify-between pb-4 border-b border-slate-800">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-dark-950 border border-slate-800 flex items-center justify-center text-lime-400">
+            <div className="w-10 h-10 rounded-xl bg-dark-950 border border-slate-800 flex items-center justify-center text-red-400">
               <Volume2 className="w-5 h-5" />
             </div>
             <div>
@@ -66,7 +66,7 @@ export const SettingsScreen: React.FC = () => {
           <button
             onClick={handleToggleSound}
             className={`w-12 h-7 rounded-full transition-colors relative p-1 ${
-              soundEnabled ? 'bg-lime-500' : 'bg-slate-700'
+              soundEnabled ? 'bg-red-600' : 'bg-slate-700'
             }`}
             aria-label="Alternar sonidos"
           >
@@ -81,7 +81,7 @@ export const SettingsScreen: React.FC = () => {
         {/* Movimiento Reducido */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-dark-950 border border-slate-800 flex items-center justify-center text-sky-400">
+            <div className="w-10 h-10 rounded-xl bg-dark-950 border border-slate-800 flex items-center justify-center text-slate-300">
               <Eye className="w-5 h-5" />
             </div>
             <div>
@@ -95,7 +95,7 @@ export const SettingsScreen: React.FC = () => {
           <button
             onClick={() => setReducedMotion(!reducedMotion)}
             className={`w-12 h-7 rounded-full transition-colors relative p-1 ${
-              reducedMotion ? 'bg-sky-500' : 'bg-slate-700'
+              reducedMotion ? 'bg-red-600' : 'bg-slate-700'
             }`}
             aria-label="Alternar movimiento reducido"
           >
@@ -122,12 +122,12 @@ export const SettingsScreen: React.FC = () => {
 
           <div className="p-3 bg-dark-950 border border-slate-800 rounded-xl flex items-center justify-between">
             <span className="text-slate-400">Frontend Hosting</span>
-            <span className="font-bold text-lime-400">Vercel (Estático)</span>
+            <span className="font-bold text-red-400">Vercel (Estático)</span>
           </div>
 
           <div className="p-3 bg-dark-950 border border-slate-800 rounded-xl flex items-center justify-between">
             <span className="text-slate-400">Backend Hosting</span>
-            <span className="font-bold text-emerald-400">Render (Node.js)</span>
+            <span className="font-bold text-red-400">Render (Node.js)</span>
           </div>
 
           <div className="p-3 bg-dark-950 border border-slate-800 rounded-xl flex items-center justify-between">

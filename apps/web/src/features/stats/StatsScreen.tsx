@@ -54,7 +54,7 @@ export const StatsScreen: React.FC = () => {
           <span>Volver al inicio</span>
         </button>
 
-        <span className="text-xs uppercase font-extrabold tracking-widest text-emerald-400">
+        <span className="text-xs uppercase font-extrabold tracking-widest text-red-400">
           Estadísticas Locales
         </span>
       </div>
@@ -89,10 +89,10 @@ export const StatsScreen: React.FC = () => {
         </Card>
 
         <Card className="p-4 flex flex-col gap-1 text-center">
-          <span className="text-[10px] uppercase font-bold text-lime-400 tracking-wider">
+          <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
             Victorias Ciudadanas
           </span>
-          <span className="text-3xl font-black text-lime-400">{normalWins}</span>
+          <span className="text-3xl font-black text-white">{normalWins}</span>
           <span className="text-[10px] text-slate-400">{normalWinRate}% del total</span>
         </Card>
 
@@ -118,7 +118,7 @@ export const StatsScreen: React.FC = () => {
           onClick={() => setActiveTab('leaderboard')}
           className={`py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
             activeTab === 'leaderboard'
-              ? 'bg-lime-500 text-dark-950 shadow-glow font-black'
+              ? 'bg-red-600 text-white shadow-glow-red font-black'
               : 'text-slate-400 hover:text-white'
           }`}
         >
@@ -130,7 +130,7 @@ export const StatsScreen: React.FC = () => {
           onClick={() => setActiveTab('history')}
           className={`py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 ${
             activeTab === 'history'
-              ? 'bg-lime-500 text-dark-950 shadow-glow font-black'
+              ? 'bg-red-600 text-white shadow-glow-red font-black'
               : 'text-slate-400 hover:text-white'
           }`}
         >
@@ -175,7 +175,7 @@ export const StatsScreen: React.FC = () => {
                       <td className="py-3.5 px-3 text-center text-red-400 font-bold">
                         {p.timesImpostor}
                       </td>
-                      <td className="py-3.5 px-3 text-center text-lime-400 font-bold">
+                      <td className="py-3.5 px-3 text-center text-slate-300 font-bold">
                         {p.impostorWins}
                       </td>
                       <td className="py-3.5 px-3 text-center text-slate-400">{p.timesCaught}</td>
@@ -218,7 +218,7 @@ export const StatsScreen: React.FC = () => {
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
                         wonNormals
-                          ? 'bg-lime-500/20 text-lime-400 border border-lime-500/40'
+                          ? 'bg-white/10 text-white border border-white/20'
                           : 'bg-red-500/20 text-red-400 border border-red-500/40'
                       }`}
                     >
@@ -241,7 +241,7 @@ export const StatsScreen: React.FC = () => {
                   <div className="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-800">
                     <span
                       className={`font-black uppercase tracking-wide text-[11px] ${
-                        wonNormals ? 'text-lime-400' : 'text-red-400'
+                        wonNormals ? 'text-white' : 'text-red-400'
                       }`}
                     >
                       {wonNormals ? 'Ganaron Inocentes' : 'Ganó Impostor'}

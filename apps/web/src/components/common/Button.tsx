@@ -36,13 +36,13 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-lime-500 hover:bg-lime-400 text-dark-950 font-bold focus-visible:ring-2 focus-visible:ring-lime-400',
+      'bg-red-600 hover:bg-red-500 text-white font-bold focus-visible:ring-2 focus-visible:ring-red-400 shadow-sm shadow-red-950/40',
     secondary:
       'bg-dark-850 hover:bg-dark-800 text-slate-200 border border-white/[0.08] focus-visible:ring-2 focus-visible:ring-slate-400',
     danger:
-      'bg-red-600 hover:bg-red-500 text-white font-bold focus-visible:ring-2 focus-visible:ring-red-400',
+      'bg-red-700 hover:bg-red-600 text-white font-bold focus-visible:ring-2 focus-visible:ring-red-400',
     outline:
-      'bg-transparent hover:bg-dark-800/80 text-lime-400 border border-lime-500/50 focus-visible:ring-2 focus-visible:ring-lime-400',
+      'bg-transparent hover:bg-red-950/30 text-red-400 border border-red-500/40 hover:border-red-500/70 focus-visible:ring-2 focus-visible:ring-red-400',
     ghost:
       'bg-transparent hover:bg-dark-800 text-slate-400 hover:text-white focus-visible:ring-2 focus-visible:ring-slate-400',
   };

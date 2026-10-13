@@ -162,7 +162,7 @@ export const OnlineEntryScreen: React.FC = () => {
           <span>Volver al inicio</span>
         </button>
 
-        <span className="text-xs uppercase font-extrabold tracking-widest text-emerald-400">
+        <span className="text-xs uppercase font-extrabold tracking-widest text-red-400">
           Multijugador online
         </span>
       </div>
@@ -171,7 +171,7 @@ export const OnlineEntryScreen: React.FC = () => {
       <div className="w-full">
         {status === 'connecting' && (
           <div className="p-3 bg-dark-900 border border-slate-800 rounded-2xl flex items-center gap-3 text-xs text-slate-300">
-            <Loader2 className="w-4 h-4 text-lime-400 animate-spin" />
+            <Loader2 className="w-4 h-4 text-red-400 animate-spin" />
             <span>Conectando al servidor online...</span>
           </div>
         )}
@@ -190,12 +190,12 @@ export const OnlineEntryScreen: React.FC = () => {
         )}
 
         {status === 'connected' && (
-          <div className="p-2.5 bg-emerald-950/30 border border-emerald-500/40 rounded-2xl flex items-center justify-between text-xs text-emerald-300">
+          <div className="p-2.5 bg-red-950/20 border border-red-500/30 rounded-2xl flex items-center justify-between text-xs text-red-200">
             <div className="flex items-center gap-2 font-semibold">
-              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
               <span>Servidor conectado en tiempo real</span>
             </div>
-            <span className="text-[10px] text-emerald-400/80 font-mono">ONLINE</span>
+            <span className="text-[10px] text-red-400/80 font-mono">ONLINE</span>
           </div>
         )}
 
@@ -221,7 +221,7 @@ export const OnlineEntryScreen: React.FC = () => {
           }}
           className={`py-2.5 rounded-xl text-xs font-bold transition-all ${
             activeTab === 'create'
-              ? 'bg-lime-500 text-dark-950 shadow-glow font-black'
+              ? 'bg-red-600 text-white shadow-glow-red font-black'
               : 'text-slate-400 hover:text-white'
           }`}
         >
@@ -235,7 +235,7 @@ export const OnlineEntryScreen: React.FC = () => {
           }}
           className={`py-2.5 rounded-xl text-xs font-bold transition-all ${
             activeTab === 'join'
-              ? 'bg-lime-500 text-dark-950 shadow-glow font-black'
+              ? 'bg-red-600 text-white shadow-glow-red font-black'
               : 'text-slate-400 hover:text-white'
           }`}
         >
@@ -253,7 +253,7 @@ export const OnlineEntryScreen: React.FC = () => {
       {activeTab === 'create' ? (
         <Card className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <PlusCircle className="w-5 h-5 text-lime-400" />
+            <PlusCircle className="w-5 h-5 text-red-400" />
             <h2 className="text-base font-bold text-white">Crear Nueva Sala</h2>
           </div>
           <p className="text-xs text-slate-400 leading-relaxed">
@@ -273,7 +273,7 @@ export const OnlineEntryScreen: React.FC = () => {
                 maxLength={25}
                 onChange={(e) => setLocalPlayerName(e.target.value)}
                 required
-                className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-lime-500"
+                className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
               />
             </div>
 
@@ -291,7 +291,7 @@ export const OnlineEntryScreen: React.FC = () => {
         /* Formulario Unirse a Sala */
         <Card className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <LogIn className="w-5 h-5 text-emerald-400" />
+            <LogIn className="w-5 h-5 text-red-400" />
             <h2 className="text-base font-bold text-white">Unirse a una Sala</h2>
           </div>
           <p className="text-xs text-slate-400 leading-relaxed">
@@ -311,7 +311,7 @@ export const OnlineEntryScreen: React.FC = () => {
                 maxLength={8}
                 onChange={(e) => setRoomCodeInput(e.target.value.toUpperCase())}
                 required
-                className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3 text-lg text-lime-400 font-mono font-black tracking-widest text-center uppercase placeholder-slate-600 focus:outline-none focus:border-lime-500"
+                className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3 text-lg text-red-400 font-mono font-black tracking-widest text-center uppercase placeholder-slate-600 focus:outline-none focus:border-red-500"
               />
             </div>
 
@@ -326,7 +326,7 @@ export const OnlineEntryScreen: React.FC = () => {
                 maxLength={25}
                 onChange={(e) => setLocalPlayerName(e.target.value)}
                 required
-                className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-lime-500"
+                className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
               />
             </div>
 

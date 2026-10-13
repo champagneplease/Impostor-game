@@ -3,7 +3,6 @@ import {
   Users,
   Plus,
   Trash2,
-  HelpCircle,
   ArrowLeft,
   Sparkles,
   Check,
@@ -116,7 +115,7 @@ export const SharedSetupScreen: React.FC = () => {
           <span>Volver</span>
         </button>
 
-        <span className="text-[11px] uppercase font-bold tracking-wider text-lime-400">
+        <span className="text-[11px] uppercase font-bold tracking-wider text-red-500">
           Modo compartido
         </span>
       </div>
@@ -141,7 +140,7 @@ export const SharedSetupScreen: React.FC = () => {
       <Card className="flex flex-col gap-4 border-white/[0.08] bg-dark-900/60">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-lime-400" />
+            <Users className="w-4 h-4 text-red-500" />
             <h2 className="text-sm font-bold text-white">
               Jugadores ({sharedPlayers.length})
             </h2>
@@ -158,7 +157,7 @@ export const SharedSetupScreen: React.FC = () => {
             maxLength={25}
             onChange={(e) => setNewPlayerName(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleAddPlayer()}
-            className="flex-1 bg-dark-950/80 border border-white/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-lime-500"
+            className="flex-1 bg-dark-950/80 border border-white/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
           />
           <Button onClick={handleAddPlayer} size="md" icon={<Plus className="w-4 h-4" />}>
             Agregar
@@ -192,7 +191,7 @@ export const SharedSetupScreen: React.FC = () => {
           <span className="text-xs uppercase font-bold tracking-wider text-slate-400">
             Modo de Votación
           </span>
-          <span className="text-[11px] text-lime-400 font-semibold">
+          <span className="text-[11px] text-red-400 font-semibold">
             {sharedSettings.votingMode === 'group' ? 'Rápida en grupo' : 'Secreta por turnos'}
           </span>
         </div>
@@ -204,12 +203,12 @@ export const SharedSetupScreen: React.FC = () => {
             onClick={() => updateSharedSettings({ votingMode: 'group' })}
             className={`p-3.5 rounded-xl border text-left flex flex-col gap-1 transition-all ${
               sharedSettings.votingMode === 'group'
-                ? 'bg-lime-500/10 border-lime-500/50 text-white font-bold'
+                ? 'bg-red-500/10 border-red-500/50 text-white font-bold'
                 : 'bg-dark-950/60 border-white/[0.06] text-slate-400 hover:bg-dark-850'
             }`}
           >
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-lime-400" />
+              <Users className="w-4 h-4 text-red-500" />
               <span className="text-xs font-bold text-white">Votación en grupo (Rápida)</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-tight">
@@ -223,12 +222,12 @@ export const SharedSetupScreen: React.FC = () => {
             onClick={() => updateSharedSettings({ votingMode: 'individual' })}
             className={`p-3.5 rounded-xl border text-left flex flex-col gap-1 transition-all ${
               sharedSettings.votingMode === 'individual'
-                ? 'bg-lime-500/10 border-lime-500/50 text-white font-bold'
+                ? 'bg-red-500/10 border-red-500/50 text-white font-bold'
                 : 'bg-dark-950/60 border-white/[0.06] text-slate-400 hover:bg-dark-850'
             }`}
           >
             <div className="flex items-center gap-2">
-              <Vote className="w-4 h-4 text-emerald-400" />
+              <Vote className="w-4 h-4 text-red-400" />
               <span className="text-xs font-bold text-white">Individual (Por turnos)</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-tight">
@@ -246,7 +245,7 @@ export const SharedSetupScreen: React.FC = () => {
             <span className="text-xs uppercase font-bold tracking-wider text-slate-400">
               Impostores
             </span>
-            <span className="text-sm font-bold text-lime-400">{sharedSettings.impostorCount}</span>
+            <span className="text-sm font-bold text-red-400">{sharedSettings.impostorCount}</span>
           </div>
 
           <div className="grid grid-cols-3 gap-1.5">
@@ -260,7 +259,7 @@ export const SharedSetupScreen: React.FC = () => {
                   onClick={() => updateSharedSettings({ impostorCount: num })}
                   className={`py-2 rounded-lg text-xs font-semibold transition-all border ${
                     isSelected
-                      ? 'bg-lime-500 text-dark-950 border-lime-400 font-bold'
+                      ? 'bg-red-600 text-white border-red-500 font-bold'
                       : disabled
                       ? 'opacity-20 border-white/[0.04] bg-dark-950 text-slate-600 pointer-events-none'
                       : 'bg-dark-950/80 border-white/[0.06] text-slate-300 hover:bg-dark-850'
@@ -290,7 +289,7 @@ export const SharedSetupScreen: React.FC = () => {
                 onClick={() => updateSharedSettings({ difficulty: d.id as DifficultyLevel })}
                 className={`py-2 rounded-lg text-xs font-semibold transition-all border ${
                   sharedSettings.difficulty === d.id
-                    ? 'bg-lime-500 text-dark-950 border-lime-400 font-bold'
+                    ? 'bg-red-600 text-white border-red-500 font-bold'
                     : 'bg-dark-950/80 border-white/[0.06] text-slate-300 hover:bg-dark-850'
                 }`}
               >
@@ -305,14 +304,14 @@ export const SharedSetupScreen: React.FC = () => {
       <Card className="flex flex-col gap-3 border-white/[0.08] bg-dark-900/60">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-lime-400" />
+            <Sparkles className="w-4 h-4 text-red-500" />
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400">
               Categorías ({sharedSettings.selectedCategoryIds.length}/{allCategories.length})
             </h2>
           </div>
           <button
             onClick={toggleSelectAllCategories}
-            className="text-xs font-medium text-lime-400 hover:underline"
+            className="text-xs font-medium text-red-400 hover:underline"
           >
             {sharedSettings.selectedCategoryIds.length === allCategories.length
               ? 'Deseleccionar todas'
@@ -329,12 +328,12 @@ export const SharedSetupScreen: React.FC = () => {
                 onClick={() => toggleCategory(cat.id)}
                 className={`p-2 rounded-lg border text-left text-xs font-medium flex items-center justify-between transition-all ${
                   isSelected
-                    ? 'bg-lime-500/10 border-lime-500/30 text-lime-300 font-semibold'
+                    ? 'bg-red-500/10 border-red-500/30 text-red-300 font-semibold'
                     : 'bg-dark-950/60 border-white/[0.06] text-slate-400 hover:bg-dark-850'
                 }`}
               >
                 <span className="truncate">{cat.name}</span>
-                {isSelected && <Check className="w-3 h-3 text-lime-400 shrink-0 ml-1" />}
+                {isSelected && <Check className="w-3 h-3 text-red-400 shrink-0 ml-1" />}
               </button>
             );
           })}
@@ -356,7 +355,7 @@ export const SharedSetupScreen: React.FC = () => {
           <button
             onClick={() => updateSharedSettings({ enableHints: !sharedSettings.enableHints })}
             className={`w-11 h-6 rounded-full transition-colors relative p-0.5 ${
-              sharedSettings.enableHints ? 'bg-lime-500' : 'bg-slate-700'
+              sharedSettings.enableHints ? 'bg-red-600' : 'bg-slate-700'
             }`}
             aria-label="Alternar pistas del impostor"
           >
@@ -381,7 +380,7 @@ export const SharedSetupScreen: React.FC = () => {
               updateSharedSettings({ allowLastChanceGuess: !sharedSettings.allowLastChanceGuess })
             }
             className={`w-11 h-6 rounded-full transition-colors relative p-0.5 ${
-              sharedSettings.allowLastChanceGuess ? 'bg-lime-500' : 'bg-slate-700'
+              sharedSettings.allowLastChanceGuess ? 'bg-red-600' : 'bg-slate-700'
             }`}
             aria-label="Alternar última oportunidad"
           >
@@ -410,7 +409,7 @@ export const SharedSetupScreen: React.FC = () => {
                 onClick={() => updateSharedSettings({ debateDurationSeconds: t.sec })}
                 className={`px-2.5 py-1 rounded-lg text-xs font-semibold border ${
                   sharedSettings.debateDurationSeconds === t.sec
-                    ? 'bg-lime-500 text-dark-950 border-lime-400 font-bold'
+                    ? 'bg-red-600 text-white border-red-500 font-bold'
                     : 'bg-dark-950/80 border-white/[0.06] text-slate-400 hover:text-white'
                 }`}
               >
@@ -423,7 +422,7 @@ export const SharedSetupScreen: React.FC = () => {
 
       {/* Botón Comenzar */}
       <div className="pt-1">
-        <Button size="xl" className="w-full py-4 text-base font-black" onClick={handleStart}>
+        <Button size="xl" className="w-full py-4 text-base font-black shadow-glow-red" onClick={handleStart}>
           ¡Comenzar Reparto de Roles!
         </Button>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Instagram } from 'lucide-react';
 import { Header } from './components/common/Header';
 import { useGameStore } from './stores/useGameStore';
 import { HomeScreen } from './features/home/HomeScreen';
@@ -50,16 +51,26 @@ export const App: React.FC = () => {
         {renderCurrentView()}
       </main>
 
-      <footer className="border-t border-slate-900/80 py-6 text-center text-xs text-slate-500">
-        <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <span>El Impostor &copy; {new Date().getFullYear()} — Diseñado para jugar entre amigos</span>
-          <div className="flex items-center gap-4 text-[11px] text-slate-400">
+      {/* Footer con marca de agua del creador */}
+      <footer className="border-t border-white/[0.06] py-6 text-center text-xs text-slate-500 bg-dark-950">
+        <div className="max-w-3xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-2 text-slate-400 text-xs">
+            <span>El Impostor &copy; {new Date().getFullYear()}</span>
+            <span>&bull;</span>
             <span>24 Categorías</span>
-            <span>&bull;</span>
-            <span>+720 Palabras</span>
-            <span>&bull;</span>
-            <span className="text-lime-400 font-semibold">100% Sin Registro</span>
           </div>
+
+          <a
+            href="https://www.instagram.com/_nachomirnd/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-red-400 transition-colors group px-3.5 py-1.5 rounded-full bg-dark-900 border border-white/[0.08] hover:border-red-500/40"
+          >
+            <Instagram className="w-3.5 h-3.5 text-red-500 group-hover:scale-110 transition-transform" />
+            <span className="text-[11px] font-medium text-slate-300 group-hover:text-white">
+              Creado por <strong className="text-red-400 font-bold">@_nachomirnd</strong>
+            </span>
+          </a>
         </div>
       </footer>
     </div>

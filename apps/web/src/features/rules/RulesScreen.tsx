@@ -43,7 +43,7 @@ export const RulesScreen: React.FC = () => {
 
       {/* 1. Objetivo General */}
       <Card className="flex flex-col gap-3">
-        <div className="flex items-center gap-2.5 text-lime-400">
+        <div className="flex items-center gap-2.5 text-red-500">
           <Shield className="w-5 h-5" />
           <h2 className="text-base font-bold text-white">1. Objetivo del Juego</h2>
         </div>
@@ -54,7 +54,7 @@ export const RulesScreen: React.FC = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs">
           <div className="p-3 bg-dark-950 border border-slate-800 rounded-xl">
-            <strong className="text-lime-400 block mb-1">Equipo Inocente:</strong>
+            <strong className="text-white block mb-1">Equipo Inocente:</strong>
             Dar pistas sutiles para reconocerse entre sí e identificar al impostor en la votación.
           </div>
           <div className="p-3 bg-dark-950 border border-slate-800 rounded-xl">
@@ -66,7 +66,7 @@ export const RulesScreen: React.FC = () => {
 
       {/* 2. Modalidades de Juego */}
       <Card className="flex flex-col gap-3">
-        <div className="flex items-center gap-2.5 text-emerald-400">
+        <div className="flex items-center gap-2.5 text-red-400">
           <Smartphone className="w-5 h-5" />
           <h2 className="text-base font-bold text-white">2. Modalidades de Juego</h2>
         </div>

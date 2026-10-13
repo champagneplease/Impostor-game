@@ -8,33 +8,33 @@
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: #070a12;
+  background-color: #060608;
   color: #f8fafc;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Scrollbar moderna y discreta */
+/* Scrollbar moderna y discreta en negro y rojo */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #070a12;
+  background: #060608;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1c1c24;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #dc2626;
 }
 
-/* Accesibilidad: Foco visible de alto contraste */
+/* Accesibilidad: Foco visible de alto contraste en rojo */
 :focus-visible {
-  outline: 2px solid #84cc16;
+  outline: 2px solid #ef4444;
   outline-offset: 2px;
 }
 

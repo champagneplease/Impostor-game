@@ -108,8 +108,8 @@ export const OnlineLobbyScreen: React.FC = () => {
           <span>Abandonar sala</span>
         </button>
 
-        <span className="text-xs uppercase font-extrabold tracking-widest text-emerald-400 flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+        <span className="text-xs uppercase font-extrabold tracking-widest text-red-400 flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
           Sala de Espera
         </span>
       </div>
@@ -120,7 +120,7 @@ export const OnlineLobbyScreen: React.FC = () => {
           Código para unirse
         </span>
 
-        <div className="text-4xl md:text-5xl font-mono font-black tracking-widest text-lime-400 select-all">
+        <div className="text-4xl md:text-5xl font-mono font-black tracking-widest text-red-400 select-all">
           {onlineRoomCode}
         </div>
 
@@ -156,7 +156,7 @@ export const OnlineLobbyScreen: React.FC = () => {
       <Card className="flex flex-col gap-4">
         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
           <div className="flex items-center gap-2">
-            <Users className="w-5 h-5 text-lime-400" />
+            <Users className="w-5 h-5 text-red-400" />
             <h2 className="text-base font-bold text-white">
               Participantes ({currentPlayers.length}/12)
             </h2>
@@ -174,7 +174,7 @@ export const OnlineLobbyScreen: React.FC = () => {
               key={player.id}
               className={`p-3.5 rounded-2xl border flex items-center justify-between transition-all ${
                 player.name === onlinePlayerName
-                  ? 'bg-dark-850 border-lime-500/50 text-white'
+                  ? 'bg-dark-850 border-red-500/50 text-white'
                   : 'bg-dark-950 border-slate-800 text-slate-300'
               }`}
             >
@@ -185,12 +185,12 @@ export const OnlineLobbyScreen: React.FC = () => {
                   </div>
                   {player.isConnected ? (
                     <div
-                      className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-dark-950"
+                      className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-red-500 border-2 border-dark-950"
                       title="En línea"
                     />
                   ) : (
                     <div
-                      className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-red-500 border-2 border-dark-950"
+                      className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-slate-600 border-2 border-dark-950"
                       title="Desconectado (esperando reconexión)"
                     />
                   )}
@@ -200,7 +200,7 @@ export const OnlineLobbyScreen: React.FC = () => {
                   <div className="flex items-center gap-1.5">
                     <span className="text-sm font-bold text-white">{player.name}</span>
                     {player.name === onlinePlayerName && (
-                      <span className="text-[10px] text-lime-400 font-semibold">(Tú)</span>
+                      <span className="text-[10px] text-red-400 font-semibold">(Tú)</span>
                     )}
                   </div>
                   <span className="text-[10px] text-slate-400">

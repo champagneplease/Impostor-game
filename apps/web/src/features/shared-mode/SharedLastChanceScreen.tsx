@@ -61,7 +61,7 @@ export const SharedLastChanceScreen: React.FC = () => {
             value={guessInput}
             onChange={(e) => setGuessInput(e.target.value)}
             autoFocus
-            className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3.5 text-base text-white placeholder-slate-500 focus:outline-none focus:border-lime-500 text-center font-bold"
+            className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3.5 text-base text-white placeholder-slate-500 focus:outline-none focus:border-red-500 text-center font-bold"
           />
 
           <Button

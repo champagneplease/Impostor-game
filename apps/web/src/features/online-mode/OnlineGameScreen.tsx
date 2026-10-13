@@ -137,14 +137,14 @@ export const OnlineGameScreen: React.FC = () => {
       <div className="max-w-md mx-auto px-4 py-8 flex flex-col items-center justify-center min-h-[75vh] animate-fadeIn">
         <Card
           className={`w-full flex flex-col items-center text-center p-8 gap-6 shadow-2xl ${
-            isImpostor ? 'border-red-500/50 bg-red-950/20' : 'border-lime-500/50 bg-dark-900'
+            isImpostor ? 'border-red-500/50 bg-red-950/20' : 'border-white/10 bg-dark-900'
           }`}
         >
           <div
             className={`w-20 h-20 rounded-3xl flex items-center justify-center ${
               isImpostor
                 ? 'bg-red-500/20 text-red-400 border border-red-500/40 shadow-glow-red'
-                : 'bg-lime-500/20 text-lime-400 border border-lime-500/40 shadow-glow'
+                : 'bg-white/[0.06] text-slate-200 border border-white/20'
             }`}
           >
             {isImpostor ? <Skull className="w-10 h-10" /> : <Shield className="w-10 h-10" />}
@@ -156,7 +156,7 @@ export const OnlineGameScreen: React.FC = () => {
             </span>
             <h2
               className={`text-2xl md:text-3xl font-black uppercase tracking-wide ${
-                isImpostor ? 'text-red-400' : 'text-lime-400'
+                isImpostor ? 'text-red-400' : 'text-white'
               }`}
             >
               {isImpostor ? '¡Eres el Impostor!' : 'Eres Inocente'}
@@ -199,7 +199,7 @@ export const OnlineGameScreen: React.FC = () => {
                 </span>
 
                 <div className="py-2 flex flex-col items-center">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-lime-400/90">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                     Palabra Secreta
                   </span>
                   <span className="text-3xl md:text-4xl font-black text-white tracking-wider mt-1">
@@ -233,7 +233,7 @@ export const OnlineGameScreen: React.FC = () => {
     return (
       <div className="max-w-2xl mx-auto px-4 py-8 flex flex-col gap-6 animate-fadeIn">
         <div className="text-center flex flex-col items-center gap-1">
-          <span className="text-xs uppercase font-extrabold tracking-widest text-lime-400">
+          <span className="text-xs uppercase font-extrabold tracking-widest text-red-400">
             Fase de Debate Sincronizada
           </span>
           <h1 className="text-3xl font-black text-white">¡Ronda de Pistas!</h1>
@@ -248,11 +248,11 @@ export const OnlineGameScreen: React.FC = () => {
             {isImpostor ? (
               <Skull className="w-5 h-5 text-red-400" />
             ) : (
-              <Shield className="w-5 h-5 text-lime-400" />
+              <Shield className="w-5 h-5 text-slate-300" />
             )}
             <span className="text-xs text-slate-300 font-semibold">
               Tu rol:{' '}
-              <strong className={isImpostor ? 'text-red-400' : 'text-lime-400'}>
+              <strong className={isImpostor ? 'text-red-400' : 'text-white'}>
                 {isImpostor ? 'Impostor' : `Palabra: «${onlineMyRole?.word}»`}
               </strong>
             </span>
@@ -311,7 +311,7 @@ export const OnlineGameScreen: React.FC = () => {
     return (
       <div className="max-w-md mx-auto px-4 py-8 flex flex-col gap-6 animate-fadeIn">
         <div className="text-center flex flex-col gap-1">
-          <span className="text-xs uppercase font-extrabold tracking-widest text-lime-400">
+          <span className="text-xs uppercase font-extrabold tracking-widest text-red-400">
             {isTieBreaker ? 'Desempate en Vivo' : 'Votación Sincronizada'}
           </span>
           <h2 className="text-2xl font-black text-white">¿Quién es el Impostor?</h2>
@@ -325,14 +325,14 @@ export const OnlineGameScreen: React.FC = () => {
         {/* Contador en vivo de votos */}
         <div className="p-3 bg-dark-900 border border-slate-800 rounded-2xl flex items-center justify-between text-xs">
           <span className="text-slate-400">Progreso de votación:</span>
-          <span className="text-lime-400 font-bold font-mono">
+          <span className="text-red-400 font-bold font-mono">
             {onlineRoomState.votesReceivedCount} de {onlineRoomState.totalEligibleVoters} votos recibidos
           </span>
         </div>
 
         {onlineVoteSubmitted ? (
           <Card className="flex flex-col items-center text-center p-8 gap-4 shadow-2xl">
-            <div className="w-16 h-16 rounded-2xl bg-lime-500/20 text-lime-400 border border-lime-500/40 flex items-center justify-center shadow-glow">
+            <div className="w-16 h-16 rounded-2xl bg-red-500/20 text-red-400 border border-red-500/40 flex items-center justify-center shadow-glow-red">
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-black text-white">¡Voto Enviado!</h3>
@@ -351,13 +351,13 @@ export const OnlineGameScreen: React.FC = () => {
                     onClick={() => setOnlineVoteTargetId(cand.id)}
                     className={`w-full p-4 rounded-2xl border text-left flex items-center justify-between transition-all ${
                       isSelected
-                        ? 'bg-lime-500/20 border-lime-500 text-white shadow-glow font-black'
+                        ? 'bg-red-500/20 border-red-500 text-white shadow-glow-red font-black'
                         : 'bg-dark-950 border-slate-800 text-slate-300 hover:bg-dark-800'
                     }`}
                   >
                     <span className="text-sm font-bold">{cand.name}</span>
                     {isSelected && (
-                      <span className="text-xs font-bold text-lime-400">Sospechoso</span>
+                      <span className="text-xs font-bold text-red-400">Sospechoso</span>
                     )}
                   </button>
                 );
@@ -413,7 +413,7 @@ export const OnlineGameScreen: React.FC = () => {
                 value={guessInput}
                 onChange={(e) => setGuessInput(e.target.value)}
                 autoFocus
-                className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3.5 text-base text-white text-center font-bold focus:outline-none focus:border-lime-500"
+                className="w-full bg-dark-950 border border-slate-700 rounded-2xl px-4 py-3.5 text-base text-white text-center font-bold focus:outline-none focus:border-red-500"
               />
 
               <Button size="xl" type="submit" className="w-full py-4 text-base shadow-glow">
@@ -440,15 +440,15 @@ export const OnlineGameScreen: React.FC = () => {
         <Card
           className={`flex flex-col items-center text-center p-8 gap-4 border shadow-2xl ${
             isNormalsWin
-              ? 'bg-lime-500/10 border-lime-500/50 shadow-glow'
+              ? 'bg-dark-850/80 border-white/20'
               : 'bg-red-500/10 border-red-500/50 shadow-glow-red'
           }`}
         >
           <div
             className={`w-20 h-20 rounded-3xl flex items-center justify-center ${
               isNormalsWin
-                ? 'bg-lime-500 text-dark-950 shadow-glow'
-                : 'bg-red-500 text-white shadow-glow-red'
+                ? 'bg-white text-dark-950'
+                : 'bg-red-600 text-white shadow-glow-red'
             }`}
           >
             {isNormalsWin ? <Trophy className="w-10 h-10" /> : <Skull className="w-10 h-10" />}
@@ -456,7 +456,7 @@ export const OnlineGameScreen: React.FC = () => {
 
           <h1
             className={`text-3xl md:text-4xl font-black uppercase tracking-tight ${
-              isNormalsWin ? 'text-lime-400' : 'text-red-400'
+              isNormalsWin ? 'text-white' : 'text-red-400'
             }`}
           >
             {isNormalsWin ? '¡Victoria Ciudadana!' : '¡Victoria del Impostor!'}
@@ -465,7 +465,7 @@ export const OnlineGameScreen: React.FC = () => {
 
         {/* Revelación de palabra */}
         <Card className="flex flex-col items-center text-center p-6 gap-2 bg-dark-850">
-          <span className="text-xs uppercase font-extrabold tracking-widest text-lime-400">
+          <span className="text-xs uppercase font-extrabold tracking-widest text-red-400">
             La palabra secreta era
           </span>
           <div className="text-3xl md:text-4xl font-black text-white tracking-wide">

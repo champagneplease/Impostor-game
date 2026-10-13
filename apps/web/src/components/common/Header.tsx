@@ -14,7 +14,7 @@ export const Header: React.FC = () => {
           className="flex items-center gap-2 text-left group transition-opacity hover:opacity-80 active:scale-95"
           aria-label="Ir al inicio"
         >
-          <div className="w-2.5 h-2.5 rounded-full bg-lime-400" />
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500 shadow-glow-red" />
           <span className="text-sm font-bold tracking-wider text-white uppercase">
             El Impostor
           </span>
@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
             onClick={() => setSoundEnabled(!soundEnabled)}
             className={`p-2 rounded-lg transition-all active:scale-95 ${
               soundEnabled
-                ? 'text-lime-400 hover:bg-lime-500/10'
+                ? 'text-red-400 hover:bg-red-500/10'
                 : 'text-slate-500 hover:text-slate-300 hover:bg-dark-850'
             }`}
             title={soundEnabled ? 'Silenciar sonidos' : 'Activar sonidos'}

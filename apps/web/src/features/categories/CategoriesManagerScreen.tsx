@@ -182,7 +182,7 @@ export const CategoriesManagerScreen: React.FC = () => {
           <span>Volver al inicio</span>
         </button>
 
-        <span className="text-xs uppercase font-extrabold tracking-widest text-lime-400">
+        <span className="text-xs uppercase font-extrabold tracking-widest text-red-400">
           Administrador de Contenido
         </span>
       </div>
@@ -245,12 +245,12 @@ export const CategoriesManagerScreen: React.FC = () => {
         <div
           className={`p-3.5 rounded-2xl border text-xs font-bold flex items-center gap-2 ${
             notification.type === 'success'
-              ? 'bg-lime-500/10 border-lime-500/40 text-lime-300'
+              ? 'bg-red-500/10 border-red-500/40 text-red-300'
               : 'bg-red-950/60 border-red-500/50 text-red-200'
           }`}
         >
           {notification.type === 'success' ? (
-            <Check className="w-4 h-4 text-lime-400" />
+            <Check className="w-4 h-4 text-red-400" />
           ) : (
             <HelpCircle className="w-4 h-4 text-red-400" />
           )}
@@ -266,7 +266,7 @@ export const CategoriesManagerScreen: React.FC = () => {
           placeholder="Buscar categorías por nombre..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full bg-dark-900 border border-slate-800 rounded-2xl pl-11 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-lime-500"
+          className="w-full bg-dark-900 border border-slate-800 rounded-2xl pl-11 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500"
         />
       </div>
 
@@ -283,7 +283,7 @@ export const CategoriesManagerScreen: React.FC = () => {
                   onClick={() => setExpandedCatId(isExpanded ? null : category.id)}
                   className="flex-1 text-left flex items-center gap-3"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-dark-950 border border-slate-800 flex items-center justify-center text-lime-400">
+                  <div className="w-10 h-10 rounded-xl bg-dark-950 border border-slate-800 flex items-center justify-center text-red-400">
                     <FolderOpen className="w-5 h-5" />
                   </div>
                   <div>
@@ -310,7 +310,7 @@ export const CategoriesManagerScreen: React.FC = () => {
                       setIsAddWordModalOpen(true);
                     }}
                     title="Añadir palabra a esta categoría"
-                    icon={<Plus className="w-4 h-4 text-lime-400" />}
+                    icon={<Plus className="w-4 h-4 text-red-400" />}
                   >
                     Palabra
                   </Button>
@@ -389,7 +389,7 @@ export const CategoriesManagerScreen: React.FC = () => {
               maxLength={50}
               onChange={(e) => setNewCatName(e.target.value)}
               required
-              className="w-full bg-dark-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-lime-500"
+              className="w-full bg-dark-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-red-500"
             />
           </div>
 
@@ -403,7 +403,7 @@ export const CategoriesManagerScreen: React.FC = () => {
               value={newCatDesc}
               maxLength={150}
               onChange={(e) => setNewCatDesc(e.target.value)}
-              className="w-full bg-dark-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-lime-500"
+              className="w-full bg-dark-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-red-500"
             />
           </div>
 
@@ -429,7 +429,7 @@ export const CategoriesManagerScreen: React.FC = () => {
               maxLength={100}
               onChange={(e) => setNewWordText(e.target.value)}
               required
-              className="w-full bg-dark-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-lime-500"
+              className="w-full bg-dark-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-red-500"
             />
           </div>
 
@@ -443,7 +443,7 @@ export const CategoriesManagerScreen: React.FC = () => {
               value={newWordHint}
               maxLength={50}
               onChange={(e) => setNewWordHint(e.target.value)}
-              className="w-full bg-dark-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-lime-500"
+              className="w-full bg-dark-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-red-500"
             />
           </div>
 
@@ -457,7 +457,7 @@ export const CategoriesManagerScreen: React.FC = () => {
                   onClick={() => setNewWordDiff(diff)}
                   className={`py-2 rounded-xl text-xs font-bold border transition-all ${
                     newWordDiff === diff
-                      ? 'bg-lime-500 text-dark-950 border-lime-400 font-black'
+                      ? 'bg-red-600 text-white border-red-500 font-black'
                       : 'bg-dark-950 border-slate-800 text-slate-400'
                   }`}
                 >

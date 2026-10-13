@@ -41,7 +41,7 @@ export const SharedVotingScreen: React.FC = () => {
       <div className="max-w-md mx-auto px-4 py-8 flex flex-col items-center justify-center min-h-[75vh] animate-fadeIn">
         <Card className="w-full flex flex-col p-6 md:p-8 gap-6 border-white/[0.08] bg-dark-900/80">
           <div className="text-center flex flex-col items-center gap-1.5">
-            <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-lime-500/10 border border-lime-500/20 text-lime-400 text-[11px] font-semibold">
+            <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-[11px] font-semibold">
               <Users className="w-3.5 h-3.5" />
               <span>Votación en grupo</span>
             </div>
@@ -63,14 +63,14 @@ export const SharedVotingScreen: React.FC = () => {
                   onClick={() => setSelectedTargetId(cand.id)}
                   className={`w-full p-3.5 rounded-xl border text-left flex items-center justify-between transition-all ${
                     isSelected
-                      ? 'bg-lime-500/15 border-lime-500 text-white font-bold'
+                      ? 'bg-red-500/15 border-red-500 text-white font-bold'
                       : 'bg-dark-950/60 border-white/[0.06] text-slate-300 hover:border-slate-700 hover:bg-dark-850'
                   }`}
                 >
                   <span className="text-sm font-semibold">{cand.name}</span>
                   <div
                     className={`w-4 h-4 rounded-full border flex items-center justify-center ${
-                      isSelected ? 'border-lime-400 bg-lime-400' : 'border-slate-700'
+                      isSelected ? 'border-red-400 bg-red-500' : 'border-slate-700'
                     }`}
                   >
                     {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-dark-950" />}
@@ -125,7 +125,7 @@ export const SharedVotingScreen: React.FC = () => {
         <span>
           {sharedPhase === 'tie_breaker' ? 'Desempate' : 'Votación secreta'}
         </span>
-        <span className="text-lime-400 font-bold bg-lime-500/10 px-2 py-0.5 rounded-full border border-lime-500/20">
+        <span className="text-red-400 font-bold bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">
           {sharedVotingPlayerIdx + 1} de {sharedPlayers.length}
         </span>
       </div>
@@ -140,7 +140,7 @@ export const SharedVotingScreen: React.FC = () => {
       {/* Cortina entre turnos */}
       {sharedVotingCurtainActive ? (
         <Card className="w-full flex flex-col items-center text-center p-8 gap-5 border-white/[0.08] bg-dark-900/90">
-          <div className="w-14 h-14 rounded-2xl bg-lime-500/15 border border-lime-500/30 flex items-center justify-center text-lime-400">
+          <div className="w-14 h-14 rounded-2xl bg-red-500/15 border border-red-500/30 flex items-center justify-center text-red-400">
             <Check className="w-7 h-7" />
           </div>
 
@@ -189,14 +189,14 @@ export const SharedVotingScreen: React.FC = () => {
                   onClick={() => setSelectedTargetId(cand.id)}
                   className={`w-full p-3.5 rounded-xl border text-left flex items-center justify-between transition-all ${
                     isSelected
-                      ? 'bg-lime-500/15 border-lime-500 text-white font-bold'
+                      ? 'bg-red-500/15 border-red-500 text-white font-bold'
                       : 'bg-dark-950/60 border-white/[0.06] text-slate-300 hover:border-slate-700 hover:bg-dark-850'
                   }`}
                 >
                   <span className="text-sm font-semibold">{cand.name}</span>
                   <div
                     className={`w-4 h-4 rounded-full border flex items-center justify-center ${
-                      isSelected ? 'border-lime-400 bg-lime-400' : 'border-slate-700'
+                      isSelected ? 'border-red-400 bg-red-500' : 'border-slate-700'
                     }`}
                   >
                     {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-dark-950" />}

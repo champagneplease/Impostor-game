@@ -133,7 +133,7 @@ export const QrCodeModal: React.FC<QrCodeModalProps> = ({
             <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
               Código de Sala
             </span>
-            <span className="text-lg font-mono font-black tracking-widest text-lime-400">
+            <span className="text-lg font-mono font-black tracking-widest text-red-400">
               {roomCode}
             </span>
           </div>

@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {
   Clock,
-  Play,
-  Pause,
-  RotateCcw,
   ArrowRight,
   Vote,
-  Sparkles,
 } from 'lucide-react';
 import { Card } from '../../components/common/Card';
 import { Button } from '../../components/common/Button';
@@ -69,7 +65,7 @@ export const SharedDebateScreen: React.FC = () => {
     <div className="max-w-xl mx-auto px-4 py-8 flex flex-col gap-6 animate-fadeIn">
       {/* Header */}
       <div className="text-center flex flex-col items-center gap-1">
-        <span className="text-[11px] uppercase font-bold tracking-wider text-lime-400">
+        <span className="text-[11px] uppercase font-bold tracking-wider text-red-500">
           Ronda de pistas
         </span>
         <h1 className="text-3xl font-black text-white tracking-tight">¡Momento de Hablar!</h1>
@@ -89,8 +85,8 @@ export const SharedDebateScreen: React.FC = () => {
       )}
 
       {/* Orador actual */}
-      <Card className="flex flex-col items-center text-center p-6 gap-3 border-lime-500/30 bg-dark-900/80">
-        <span className="text-[10px] font-bold uppercase tracking-wider text-lime-400">
+      <Card className="flex flex-col items-center text-center p-6 gap-3 border-red-500/30 bg-dark-900/80">
+        <span className="text-[10px] font-bold uppercase tracking-wider text-red-400">
           Le toca dar una pista a
         </span>
 
@@ -106,17 +102,17 @@ export const SharedDebateScreen: React.FC = () => {
         </Button>
       </Card>
 
-      {/* Temporizador opcional si está activado */}
+      {/* Temporizador opcional */}
       {sharedSettings.debateDurationSeconds > 0 && (
         <Card className="flex flex-col items-center text-center p-4 gap-2 border-white/[0.06] bg-dark-900/60">
           <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
-            <Clock className="w-3.5 h-3.5 text-lime-400" />
+            <Clock className="w-3.5 h-3.5 text-red-400" />
             <span>Tiempo restante</span>
           </div>
 
           <div
             className={`text-4xl font-mono font-bold ${
-              secondsLeft <= 15 ? 'text-red-400 animate-pulse' : 'text-white'
+              secondsLeft <= 15 ? 'text-red-500 animate-pulse' : 'text-white'
             }`}
           >
             {formatTime(secondsLeft)}
@@ -148,7 +144,7 @@ export const SharedDebateScreen: React.FC = () => {
               key={idx}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
                 isActive
-                  ? 'bg-lime-500 text-dark-950 font-bold'
+                  ? 'bg-red-600 text-white font-bold'
                   : 'bg-dark-900/70 border border-white/[0.06] text-slate-400'
               }`}
             >
@@ -162,7 +158,7 @@ export const SharedDebateScreen: React.FC = () => {
       <div className="pt-2">
         <Button
           size="xl"
-          className="w-full py-4 text-base font-black"
+          className="w-full py-4 text-base font-black shadow-glow-red"
           onClick={startSharedVoting}
           icon={<Vote className="w-5 h-5" />}
         >

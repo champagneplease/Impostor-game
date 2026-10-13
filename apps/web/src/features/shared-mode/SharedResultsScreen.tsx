@@ -39,15 +39,15 @@ export const SharedResultsScreen: React.FC = () => {
       <Card
         className={`flex flex-col items-center text-center p-8 gap-3 border ${
           isNormalsWin
-            ? 'bg-lime-500/10 border-lime-500/30'
+            ? 'bg-dark-850/80 border-white/20'
             : 'bg-red-500/10 border-red-500/30'
         }`}
       >
         <div
           className={`w-14 h-14 rounded-2xl flex items-center justify-center ${
             isNormalsWin
-              ? 'bg-lime-500 text-dark-950 font-bold'
-              : 'bg-red-500 text-white font-bold'
+              ? 'bg-white text-dark-950 font-bold'
+              : 'bg-red-600 text-white font-bold'
           }`}
         >
           {isNormalsWin ? <Trophy className="w-7 h-7" /> : <Skull className="w-7 h-7" />}
@@ -59,7 +59,7 @@ export const SharedResultsScreen: React.FC = () => {
           </span>
           <h1
             className={`text-2xl md:text-3xl font-black uppercase tracking-tight ${
-              isNormalsWin ? 'text-lime-400' : 'text-red-400'
+              isNormalsWin ? 'text-white' : 'text-red-400'
             }`}
           >
             {isNormalsWin ? '¡Victoria Inocente!' : '¡Victoria del Impostor!'}
@@ -75,7 +75,7 @@ export const SharedResultsScreen: React.FC = () => {
         <span className="text-[11px] text-slate-400">
           Categoría: <strong className="text-white">{sharedEndSummary.categoryName}</strong>
         </span>
-        <span className="text-[10px] uppercase font-bold tracking-widest text-lime-400 mt-1">
+        <span className="text-[10px] uppercase font-bold tracking-widest text-red-400 mt-1">
           La palabra secreta era
         </span>
         <div className="text-3xl font-black text-white tracking-wider py-1">
@@ -85,9 +85,9 @@ export const SharedResultsScreen: React.FC = () => {
         {sharedEndSummary.lastChanceGuess && (
           <div className="mt-2 p-2.5 bg-dark-950 rounded-xl border border-white/[0.06] text-xs flex items-center gap-2">
             {sharedEndSummary.lastChanceGuess.wasCorrect ? (
-              <CheckCircle2 className="w-4 h-4 text-lime-400 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-red-400 shrink-0" />
             ) : (
-              <XCircle className="w-4 h-4 text-red-400 shrink-0" />
+              <XCircle className="w-4 h-4 text-red-500 shrink-0" />
             )}
             <span>
               Adivinanza del impostor: «
