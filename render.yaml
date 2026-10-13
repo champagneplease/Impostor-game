@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: impostor-server
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build:shared && npm run build:server
+    startCommand: npm run start:server
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: CLIENT_ORIGINS
+        value: http://localhost:5173,https://*.vercel.app
+      - key: LOG_LEVEL
+        value: info

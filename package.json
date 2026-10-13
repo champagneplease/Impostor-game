@@ -1,0 +1,49 @@
+{
+  "name": "impostor-game",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Juego del Impostor - Aplicación web completa y moderna para jugar en dispositivo compartido y multijugador online",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:web": "npm run dev --workspace=@impostor/web",
+    "dev:server": "npm run dev --workspace=@impostor/server",
+    "build": "npm run build --workspaces --if-present",
+    "build:shared": "npm run build --workspace=@impostor/shared",
+    "build:web": "npm run build --workspace=@impostor/web",
+    "build:server": "npm run build --workspace=@impostor/server",
+    "test": "npm run test --workspaces --if-present",
+    "test:shared": "npm run test --workspace=@impostor/shared",
+    "test:server": "npm run test --workspace=@impostor/server",
+    "test:web": "npm run test --workspace=@impostor/web",
+    "lint": "npm run lint --workspaces --if-present",
+    "start:server": "npm run start --workspace=@impostor/server"
+  },
+  "keywords": [
+    "impostor",
+    "game",
+    "multiplayer",
+    "socket.io",
+    "react",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "allowScripts": {
+    "esbuild": true
+  },
+  "devDependencies": {
+    "@rollup/rollup-darwin-arm64": "^4.64.5",
+    "accepts": "^1.3.8",
+    "cors": "^2.8.6",
+    "electron-to-chromium": "^1.5.453",
+    "express": "^5.3.0",
+    "happy-dom": "^21.0.1",
+    "socket.io": "^4.8.4",
+    "vite": "^7.3.7",
+    "vitest": "^5.0.4"
+  }
+}
