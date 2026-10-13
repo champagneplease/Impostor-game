@@ -2,36 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Kimura Display';
-  src: url('/fonts/Kimura.otf') format('opentype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Kimura';
-  src: url('/fonts/Kimura.otf') format('opentype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   color-scheme: dark;
-  font-family: 'Kimura Display', 'Kimura', 'Inter', system-ui, -apple-system, sans-serif;
-}
-
-body, button, input, select, textarea {
-  font-family: 'Kimura Display', 'Kimura', 'Inter', system-ui, -apple-system, sans-serif;
-  letter-spacing: 0.02em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-  background-color: #060608;
-  color: #f8fafc;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #09090b;
+  color: #f4f4f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
 }
 
 /* Scrollbar moderna y discreta en negro y rojo */
@@ -41,11 +29,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #060608;
+  background: #09090b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1c1c24;
+  background: #27272a;
   border-radius: 9999px;
 }
 

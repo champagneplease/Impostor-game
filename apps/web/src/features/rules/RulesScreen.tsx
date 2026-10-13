@@ -29,7 +29,7 @@ export const RulesScreen: React.FC = () => {
           <span>Volver al inicio</span>
         </button>
 
-        <span className="text-xs uppercase font-extrabold tracking-widest text-sky-400">
+        <span className="text-xs uppercase font-extrabold tracking-widest text-red-400">
           Manual Oficial
         </span>
       </div>

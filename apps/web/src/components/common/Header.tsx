@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
           aria-label="Ir al inicio"
         >
           <div className="w-2.5 h-2.5 rounded-full bg-red-500 shadow-glow-red" />
-          <span className="text-sm font-bold tracking-wider text-white uppercase">
+          <span className="text-sm font-bold tracking-tight text-white uppercase">
             El Yilpostor
           </span>
         </button>
