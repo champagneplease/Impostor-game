@@ -77,6 +77,7 @@ interface GameStoreState {
   hideAndNextSharedRole: () => void;
   startSharedVoting: () => void;
   submitSharedVote: (targetId: string) => void;
+  submitSharedGroupAccusation: (accusedPlayerId: string) => void;
   advanceSharedVotingCurtain: () => void;
   submitSharedLastChanceGuess: (guess: string) => void;
   restartSharedGame: () => void;
@@ -266,6 +267,57 @@ export const useGameStore = create<GameStoreState>((set, get) => {
       set({
         sharedVotes: newVotes,
         sharedVotingCurtainActive: true,
+      });
+    },
+
+    submitSharedGroupAccusation: (accusedPlayerId: string) => {
+      audioService.playClick();
+      const state = get();
+      const impostorIds = state.sharedRoleAssignments
+        .filter((r) => r.role === 'impostor')
+        .map((r) => r.playerId);
+
+      const isImpostor = impostorIds.includes(accusedPlayerId);
+      const remainingImpostors = isImpostor
+        ? impostorIds.filter((id) => id !== accusedPlayerId)
+        : impostorIds;
+
+      const groupVotingResult: VotingResult = {
+        voteCounts: { [accusedPlayerId]: state.sharedPlayers.length },
+        mostVotedPlayerIds: [accusedPlayerId],
+        eliminatedPlayerId: accusedPlayerId,
+        isImpostorEliminated: isImpostor,
+        remainingImpostors,
+        isTie: false,
+      };
+
+      // Si el grupo descubrió al impostor y tiene última oportunidad
+      if (isImpostor && state.sharedSettings.allowLastChanceGuess) {
+        set({
+          sharedVotingResult: groupVotingResult,
+          sharedLastChanceImpostorId: accusedPlayerId,
+          sharedPhase: 'last_chance',
+          sharedVotingCurtainActive: false,
+        });
+        return;
+      }
+
+      // Fin de la partida inmediato
+      const endSummary = evaluateGameEnd({
+        players: state.sharedPlayers.map((name, idx) => ({ id: `local_p_${idx}`, name })),
+        roleMap: new Map(state.sharedRoleAssignments.map((r) => [r.playerId, r.role])),
+        secretWord: state.sharedSecretWord!,
+        categoryName: state.sharedCategory!.name,
+        votingResult: groupVotingResult,
+      });
+
+      StorageService.recordGameResult(endSummary);
+      audioService.playVictory();
+      set({
+        sharedVotingResult: groupVotingResult,
+        sharedEndSummary: endSummary,
+        sharedPhase: 'game_over',
+        sharedVotingCurtainActive: false,
       });
     },
 

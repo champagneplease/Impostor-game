@@ -32,6 +32,7 @@ export const GameSettingsSchema = z.object({
   turnOrderRandomized: z.boolean().default(true),
   allowLastChanceGuess: z.boolean().default(true),
   allowSelfVote: z.boolean().default(false),
+  votingMode: z.enum(['group', 'individual']).default('group'),
 }).refine(data => data.impostorCount < data.playerCount, {
   message: 'La cantidad de impostores debe ser menor al número total de jugadores',
   path: ['impostorCount']

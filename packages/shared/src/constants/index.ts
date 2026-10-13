@@ -11,6 +11,7 @@ export const DEFAULT_GAME_SETTINGS: GameSettings = {
   turnOrderRandomized: true,
   allowLastChanceGuess: true,
   allowSelfVote: false,
+  votingMode: 'group',
 };
 
 export const GAME_LIMITS = {

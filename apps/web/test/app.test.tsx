@@ -69,4 +69,17 @@ describe('Pruebas del Frontend: El Impostor', () => {
     StorageService.updatePreferences({ soundEnabled: true });
     expect(StorageService.load().preferences.soundEnabled).toBe(true);
   });
+
+  it('debe permitir cambiar el modo de votación entre en grupo e individual', () => {
+    render(<App />);
+    fireEvent.click(screen.getByText(/Dispositivo compartido/i));
+
+    expect(screen.getByText(/Votación en grupo \(Rápida\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Individual \(Por turnos\)/i)).toBeInTheDocument();
+
+    const indBtn = screen.getByText(/Individual \(Por turnos\)/i);
+    fireEvent.click(indBtn);
+
+    expect(useGameStore.getState().sharedSettings.votingMode).toBe('individual');
+  });
 });

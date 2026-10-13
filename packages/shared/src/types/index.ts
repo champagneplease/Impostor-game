@@ -45,6 +45,7 @@ export interface GameSettings {
   turnOrderRandomized: boolean;
   allowLastChanceGuess: boolean;
   allowSelfVote: boolean;
+  votingMode: 'group' | 'individual';
 }
 
 export type GamePhase =

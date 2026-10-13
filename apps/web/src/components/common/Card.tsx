@@ -10,15 +10,15 @@ export const Card: React.FC<CardProps> = ({
   className = '',
   ...props
 }) => {
-  const baseStyles = 'rounded-3xl p-5 md:p-6 transition-all duration-200 border';
+  const baseStyles = 'rounded-2xl p-5 md:p-6 transition-all duration-150 border';
 
   const variantStyles = {
-    default: 'bg-dark-900/90 border-slate-800/80 backdrop-blur-md shadow-lg',
-    elevated: 'bg-dark-850 border-slate-700/80 shadow-xl',
+    default: 'bg-dark-900/70 border-white/[0.06] backdrop-blur-sm',
+    elevated: 'bg-dark-850 border-white/[0.08]',
     interactive:
-      'bg-dark-900/90 border-slate-800 hover:border-lime-500/60 hover:bg-dark-850 cursor-pointer active:scale-[0.99] shadow-lg hover:shadow-glow',
-    highlight: 'bg-gradient-to-b from-dark-850 to-dark-900 border-lime-500/50 shadow-glow',
-    danger: 'bg-red-950/20 border-red-500/40 shadow-glow-red',
+      'bg-dark-900/70 border-white/[0.06] hover:border-lime-500/40 hover:bg-dark-850/80 cursor-pointer active:scale-[0.99]',
+    highlight: 'bg-dark-900/90 border-lime-500/30',
+    danger: 'bg-red-950/20 border-red-500/30',
   };
 
   return (
