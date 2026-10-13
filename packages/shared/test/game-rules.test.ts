@@ -42,6 +42,26 @@ describe('Motor de Reglas del Impostor', () => {
     }
   });
 
+  it('la palabra Lionel Messi debe tener estrictamente como pista DIOS', () => {
+    const messiWords = INITIAL_WORDS.filter((w) => w.text.toLowerCase().includes('messi'));
+    expect(messiWords.length).toBeGreaterThanOrEqual(2);
+    for (const w of messiWords) {
+      expect(w.impostorHint).toBe('DIOS');
+    }
+  });
+
+  it('debe incluir las nuevas categorías argentina y fumeta con al menos 30 palabras cada una', () => {
+    const argCat = INITIAL_CATEGORIES.find((c) => c.id === 'argentina');
+    const fumCat = INITIAL_CATEGORIES.find((c) => c.id === 'fumeta');
+    expect(argCat).toBeDefined();
+    expect(fumCat).toBeDefined();
+
+    const argWords = INITIAL_WORDS.filter((w) => w.categoryId === 'argentina');
+    const fumWords = INITIAL_WORDS.filter((w) => w.categoryId === 'fumeta');
+    expect(argWords.length).toBeGreaterThanOrEqual(30);
+    expect(fumWords.length).toBeGreaterThanOrEqual(30);
+  });
+
   it('debe generar códigos de sala de 6 caracteres válidos y no ambiguos', () => {
     const code = generateRoomCode(6);
     expect(code).toHaveLength(6);

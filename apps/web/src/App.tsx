@@ -1,5 +1,6 @@
 import React from 'react';
 import { Instagram } from 'lucide-react';
+import { INITIAL_CATEGORIES } from '@impostor/shared';
 import { Header } from './components/common/Header';
 import { useGameStore } from './stores/useGameStore';
 import { HomeScreen } from './features/home/HomeScreen';
@@ -57,7 +58,7 @@ export const App: React.FC = () => {
           <div className="flex items-center gap-2 text-slate-400 text-xs">
             <span>El Impostor &copy; {new Date().getFullYear()}</span>
             <span>&bull;</span>
-            <span>24 Categorías</span>
+            <span>{INITIAL_CATEGORIES.length} Categorías</span>
           </div>
 
           <a

@@ -169,4 +169,18 @@ export const INITIAL_CATEGORIES: CategoryItem[] = [
     icon: 'Shirt',
     enabled: true,
   },
+  {
+    id: 'argentina',
+    name: 'Argentina',
+    description: 'Comidas, costumbres, íconos, modismos y cultura popular argentina',
+    icon: 'Sun',
+    enabled: true,
+  },
+  {
+    id: 'fumeta',
+    name: 'Fumeta',
+    description: 'Cultura cannábica, variedades, parafernalia y artistas del palo de la weed',
+    icon: 'Flame',
+    enabled: true,
+  },
 ];

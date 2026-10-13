@@ -40,6 +40,8 @@ describe('Pruebas del Frontend: El Impostor', () => {
     expect(screen.getByText(/Categorías y Palabras/i)).toBeInTheDocument();
     expect(screen.getByText(/Fútbol/i)).toBeInTheDocument();
     expect(screen.getByText(/Películas/i)).toBeInTheDocument();
+    expect(screen.getByText(/Argentina/i)).toBeInTheDocument();
+    expect(screen.getByText(/Fumeta/i)).toBeInTheDocument();
   });
 
   it('debe navegar a la pantalla de estadísticas', () => {

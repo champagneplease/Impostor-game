@@ -192,7 +192,7 @@ export const CategoriesManagerScreen: React.FC = () => {
         <div>
           <h1 className="text-2xl md:text-3xl font-black text-white">Categorías y Palabras</h1>
           <p className="text-xs md:text-sm text-slate-400 mt-1">
-            Explora las 24 categorías oficiales o crea tus propios paquetes para jugar.
+            Explora las {INITIAL_CATEGORIES.length} categorías oficiales o crea tus propios paquetes para jugar.
           </p>
         </div>
 
