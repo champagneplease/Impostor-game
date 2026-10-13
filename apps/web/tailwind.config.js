@@ -33,7 +33,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['"Kimura Display"', 'Kimura', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Kimura Display"', 'Kimura', 'sans-serif'],
       },
       boxShadow: {
         glow: '0 0 25px -5px rgba(239, 68, 68, 0.4)',

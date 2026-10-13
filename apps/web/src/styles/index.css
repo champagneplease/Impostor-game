@@ -2,12 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Kimura Display';
+  src: url('/fonts/Kimura.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kimura';
+  src: url('/fonts/Kimura.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
+  font-family: 'Kimura Display', 'Kimura', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body, button, input, select, textarea {
+  font-family: 'Kimura Display', 'Kimura', 'Inter', system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.02em;
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: #060608;
   color: #f8fafc;
   -webkit-tap-highlight-color: transparent;
