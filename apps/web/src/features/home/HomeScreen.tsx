@@ -19,7 +19,7 @@ export const HomeScreen: React.FC = () => {
       {/* Hero Minimalista Negro y Rojo */}
       <section className="text-center flex flex-col items-center gap-2">
         <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white uppercase">
-          El Impostor
+          El Yilpostor
         </h1>
         <p className="text-slate-400 text-sm md:text-base max-w-sm leading-relaxed">
           Todos conocen la palabra secreta excepto uno. Da pistas, descubre al mentiroso y vota para ganar.

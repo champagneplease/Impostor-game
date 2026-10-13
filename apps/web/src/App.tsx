@@ -1,6 +1,5 @@
 import React from 'react';
 import { Instagram } from 'lucide-react';
-import { INITIAL_CATEGORIES } from '@impostor/shared';
 import { Header } from './components/common/Header';
 import { useGameStore } from './stores/useGameStore';
 import { HomeScreen } from './features/home/HomeScreen';
@@ -52,14 +51,12 @@ export const App: React.FC = () => {
         {renderCurrentView()}
       </main>
 
-      {/* Footer con marca de agua del creador */}
-      <footer className="border-t border-white/[0.06] py-6 text-center text-xs text-slate-500 bg-dark-950">
+      {/* Footer minimalista con marca de agua del creador */}
+      <footer className="border-t border-white/[0.06] py-6 bg-dark-950">
         <div className="max-w-3xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-slate-400 text-xs">
-            <span>El Impostor &copy; {new Date().getFullYear()}</span>
-            <span>&bull;</span>
-            <span>{INITIAL_CATEGORIES.length} Categorías</span>
-          </div>
+          <span className="text-xs text-slate-500 font-medium">
+            El Yilpostor &copy; {new Date().getFullYear()}
+          </span>
 
           <a
             href="https://www.instagram.com/_nachomirnd/"

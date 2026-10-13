@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
         >
           <div className="w-2.5 h-2.5 rounded-full bg-red-500 shadow-glow-red" />
           <span className="text-sm font-bold tracking-wider text-white uppercase">
-            El Impostor
+            El Yilpostor
           </span>
         </button>
 

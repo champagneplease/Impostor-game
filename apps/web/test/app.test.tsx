@@ -16,7 +16,7 @@ describe('Pruebas del Frontend: El Impostor', () => {
 
   it('debe renderizar la pantalla de inicio con título y las dos modalidades directamente visibles', () => {
     render(<App />);
-    const headings = screen.getAllByText(/EL IMPOSTOR/i);
+    const headings = screen.getAllByText(/EL YILPOSTOR/i);
     expect(headings.length).toBeGreaterThan(0);
     expect(screen.getByText(/Dispositivo compartido/i)).toBeInTheDocument();
     expect(screen.getByText(/Multijugador online/i)).toBeInTheDocument();
@@ -58,7 +58,7 @@ describe('Pruebas del Frontend: El Impostor', () => {
     const rulesCards = screen.getAllByText(/^Reglas$/i);
     fireEvent.click(rulesCards[0]!);
 
-    expect(screen.getByText(/Reglas del Impostor/i)).toBeInTheDocument();
+    expect(screen.getByText(/Reglas de El Yilpostor/i)).toBeInTheDocument();
     expect(screen.getByText(/1. Objetivo del Juego/i)).toBeInTheDocument();
     expect(screen.getByText(/4. Votaciones y Empates/i)).toBeInTheDocument();
   });

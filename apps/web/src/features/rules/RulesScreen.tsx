@@ -35,7 +35,7 @@ export const RulesScreen: React.FC = () => {
       </div>
 
       <div>
-        <h1 className="text-2xl md:text-3xl font-black text-white">Reglas del Impostor</h1>
+        <h1 className="text-2xl md:text-3xl font-black text-white">Reglas de El Yilpostor</h1>
         <p className="text-xs md:text-sm text-slate-400 mt-1">
           Guía completa de mecánicas, roles, votaciones y condiciones de victoria.
         </p>
