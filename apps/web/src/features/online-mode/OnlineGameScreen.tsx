@@ -163,53 +163,54 @@ export const OnlineGameScreen: React.FC = () => {
             </h2>
           </div>
 
-          <div className="w-full bg-dark-950 border border-slate-800 rounded-2xl p-5 flex flex-col gap-3">
+          <div className="w-full bg-dark-950/90 border border-slate-800/90 rounded-2xl p-5 flex flex-col gap-3">
             {isImpostor ? (
-              <>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
-                    Categoría
-                  </span>
-                  <span className="text-base font-extrabold text-white">
-                    {onlineMyRole?.categoryName}
-                  </span>
+              <div className="flex flex-col items-center gap-2">
+                <div className="text-[11px] text-slate-400">
+                  Categoría: <strong className="text-white">{onlineMyRole?.categoryName}</strong>
                 </div>
 
                 {onlineMyRole?.hint ? (
-                  <div className="pt-2 border-t border-slate-800/80">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block flex items-center justify-center gap-1">
-                      <HelpCircle className="w-3 h-3" /> Pista del Impostor
+                  <div className="py-2 flex flex-col items-center">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400/90 flex items-center gap-1">
+                      <HelpCircle className="w-3 h-3" /> Pista del impostor (1 palabra)
                     </span>
-                    <span className="text-sm font-semibold text-slate-200 mt-0.5 block">
+                    <span className="text-3xl md:text-4xl font-black text-amber-300 tracking-wider mt-1 uppercase">
                       «{onlineMyRole.hint}»
                     </span>
+                    <p className="text-[11px] text-slate-400 mt-2 text-center">
+                      Usa esta palabra para participar sin levantar sospechas.
+                    </p>
                   </div>
                 ) : (
-                  <p className="text-xs text-slate-400">
-                    Sin pistas activas. ¡Descubre la palabra escuchando a los demás!
+                  <p className="text-xs text-slate-400 py-3">
+                    Modo sin pistas. ¡Escucha con atención lo que dicen los demás para deducir la palabra!
                   </p>
                 )}
-              </>
-            ) : (
-              <>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
-                    Categoría
-                  </span>
-                  <span className="text-xs font-bold text-slate-300">
-                    {onlineMyRole?.categoryName}
-                  </span>
-                </div>
 
-                <div className="pt-2 border-t border-slate-800/80">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-lime-400 block">
+                <p className="text-[11px] text-red-300/80 font-medium">
+                  Objetivo: Finge que conoces la palabra y no dejes que te descubran.
+                </p>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-[11px] text-slate-400">
+                  Categoría: <strong className="text-white">{onlineMyRole?.categoryName}</strong>
+                </span>
+
+                <div className="py-2 flex flex-col items-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-lime-400/90">
                     Palabra Secreta
                   </span>
-                  <span className="text-2xl md:text-3xl font-black text-white tracking-wide block mt-1">
+                  <span className="text-3xl md:text-4xl font-black text-white tracking-wider mt-1">
                     {onlineMyRole?.word}
                   </span>
                 </div>
-              </>
+
+                <p className="text-[11px] text-slate-400">
+                  Objetivo: Da una pista inteligente sin ser demasiado obvio.
+                </p>
+              </div>
             )}
           </div>
 

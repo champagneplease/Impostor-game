@@ -237,7 +237,7 @@ export const OnlineLobbyScreen: React.FC = () => {
             <div className="p-2.5 rounded-xl bg-dark-950 border border-slate-800 text-slate-300">
               <span className="text-[10px] text-slate-500 block uppercase font-bold">Pistas</span>
               <span className="font-semibold">
-                {onlineRoomState.settings.enableHints ? 'Con pista' : 'Sin pista'}
+                {onlineRoomState.settings.enableHints ? '1 sola palabra' : 'Sin pista'}
               </span>
             </div>
             <div className="p-2.5 rounded-xl bg-dark-950 border border-slate-800 text-slate-300">

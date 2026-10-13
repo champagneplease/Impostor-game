@@ -177,7 +177,11 @@ export function buildSecretRoleAssignments(params: {
       // Rol Impostor: NUNCA incluye secretWord
       let hint: string | undefined = undefined;
       if (settings.enableHints) {
-        hint = secretWord.impostorHint || `Pista: Asociada a la categoría ${categoryName}`;
+        if (secretWord.impostorHint && secretWord.impostorHint.trim()) {
+          hint = secretWord.impostorHint.trim().split(/\s+/)[0];
+        } else {
+          hint = categoryName.trim().split(/\s+/)[0] || 'General';
+        }
       }
 
       assignments.set(player.id, {

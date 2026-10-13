@@ -33,6 +33,15 @@ describe('Motor de Reglas del Impostor', () => {
     }
   });
 
+  it('todas las pistas del impostor deben ser estrictamente una sola palabra sin espacios', () => {
+    for (const word of INITIAL_WORDS) {
+      if (word.impostorHint) {
+        expect(word.impostorHint.trim()).not.toContain(' ');
+        expect(word.impostorHint.trim().length).toBeGreaterThan(0);
+      }
+    }
+  });
+
   it('debe generar códigos de sala de 6 caracteres válidos y no ambiguos', () => {
     const code = generateRoomCode(6);
     expect(code).toHaveLength(6);

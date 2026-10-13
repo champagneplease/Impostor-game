@@ -88,12 +88,14 @@ export const CategoriesManagerScreen: React.FC = () => {
     e.preventDefault();
     if (!newWordText.trim() || !targetCatIdForWord) return;
 
+    const singleWordHint = newWordHint.trim() ? newWordHint.trim().split(/\s+/)[0] : undefined;
+
     const newWord: WordItem = {
       id: `custom_w_${Date.now()}`,
       categoryId: targetCatIdForWord,
       text: newWordText.trim(),
       difficulty: newWordDiff,
-      impostorHint: newWordHint.trim() || undefined,
+      impostorHint: singleWordHint,
       tags: ['personalizada'],
       enabled: true,
     };
@@ -433,13 +435,13 @@ export const CategoriesManagerScreen: React.FC = () => {
 
           <div>
             <label className="text-xs font-bold text-slate-300 block mb-1">
-              Pista para el Impostor (Opcional)
+              Pista para el Impostor (1 sola palabra, opcional)
             </label>
             <input
               type="text"
-              placeholder="Ej: Cuatro hombres que resuelven problemas inverosímiles"
+              placeholder="Ej: Felino, Mago, Rescate..."
               value={newWordHint}
-              maxLength={200}
+              maxLength={50}
               onChange={(e) => setNewWordHint(e.target.value)}
               className="w-full bg-dark-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-lime-500"
             />

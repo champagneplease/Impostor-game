@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eye, EyeOff, Shield, Skull, HelpCircle, Lock } from 'lucide-react';
+import { Eye, EyeOff, Shield, Skull, Lock, Sparkles, HelpCircle } from 'lucide-react';
 import { Card } from '../../components/common/Card';
 import { Button } from '../../components/common/Button';
 import { useGameStore } from '../../stores/useGameStore';
@@ -25,38 +25,37 @@ export const SharedRoleRevealScreen: React.FC = () => {
 
   return (
     <div className="max-w-md mx-auto px-4 py-8 flex flex-col items-center justify-center min-h-[75vh] animate-fadeIn">
-      {/* Progreso */}
-      <div className="w-full flex items-center justify-between text-xs text-slate-400 font-semibold mb-6">
+      {/* Indicador de Turno Superior */}
+      <div className="w-full flex items-center justify-between text-xs text-slate-400 font-medium mb-6">
         <span>Reparto de roles</span>
-        <span className="text-lime-400 font-bold">
-          {sharedRevealIndex + 1} de {sharedRoleAssignments.length} jugadores
+        <span className="text-lime-400 font-bold bg-lime-500/10 px-2.5 py-0.5 rounded-full border border-lime-500/20">
+          {sharedRevealIndex + 1} de {sharedRoleAssignments.length}
         </span>
       </div>
 
       {/* Pantalla 1: Cortina de Privacidad */}
       {!sharedIsCardFlipped ? (
-        <Card className="w-full flex flex-col items-center text-center p-8 gap-6 shadow-2xl border-slate-700/80">
-          <div className="w-20 h-20 rounded-3xl bg-dark-800 border-2 border-slate-700 flex items-center justify-center text-lime-400 shadow-glow">
-            <Lock className="w-10 h-10" />
+        <Card className="w-full flex flex-col items-center text-center p-8 gap-6 rounded-3xl border-slate-800 bg-dark-900/95 shadow-2xl">
+          <div className="w-16 h-16 rounded-2xl bg-dark-850 border border-slate-700/80 flex items-center justify-center text-slate-400">
+            <Lock className="w-7 h-7" />
           </div>
 
-          <div className="flex flex-col gap-2">
-            <span className="text-xs uppercase font-extrabold tracking-widest text-slate-400">
-              Pasa el dispositivo a
+          <div className="flex flex-col gap-1.5">
+            <span className="text-xs uppercase font-bold tracking-widest text-slate-500">
+              Pásale el dispositivo a
             </span>
-            <h2 className="text-3xl font-black text-white">{playerName}</h2>
+            <h2 className="text-3xl font-black text-white tracking-tight">{playerName}</h2>
           </div>
 
-          <div className="p-3 bg-dark-950/80 border border-slate-800 rounded-2xl text-xs text-slate-300 flex items-center gap-2">
-            <EyeOff className="w-4 h-4 text-amber-400 shrink-0" />
-            <span>Asegúrate de que nadie más mire la pantalla antes de continuar.</span>
-          </div>
+          <p className="text-xs text-slate-400 max-w-xs leading-relaxed">
+            Asegúrate de que nadie más mire la pantalla antes de revelar tu identidad.
+          </p>
 
           <Button
             size="xl"
-            className="w-full py-4 text-lg shadow-glow mt-2"
+            className="w-full py-4 text-base shadow-glow mt-1"
             onClick={revealSharedRole}
-            icon={<Eye className="w-6 h-6" />}
+            icon={<Eye className="w-5 h-5" />}
           >
             Ver mi rol
           </Button>
@@ -64,100 +63,100 @@ export const SharedRoleRevealScreen: React.FC = () => {
       ) : (
         /* Pantalla 2: Rol Revelado en Privado */
         <Card
-          className={`w-full flex flex-col items-center text-center p-8 gap-6 shadow-2xl transition-all ${
-            isImpostor ? 'border-red-500/50 bg-red-950/20' : 'border-lime-500/50 bg-dark-900'
+          className={`w-full flex flex-col items-center text-center p-8 gap-5 rounded-3xl shadow-2xl transition-all border ${
+            isImpostor
+              ? 'border-red-500/40 bg-gradient-to-b from-dark-900 via-red-950/20 to-dark-950'
+              : 'border-lime-500/40 bg-gradient-to-b from-dark-900 via-lime-950/20 to-dark-950'
           }`}
         >
-          <div
-            className={`w-20 h-20 rounded-3xl flex items-center justify-center shadow-lg ${
-              isImpostor
-                ? 'bg-red-500/20 text-red-400 border border-red-500/40 shadow-glow-red'
-                : 'bg-lime-500/20 text-lime-400 border border-lime-500/40 shadow-glow'
-            }`}
-          >
-            {isImpostor ? <Skull className="w-10 h-10" /> : <Shield className="w-10 h-10" />}
-          </div>
+          {/* Badge del Jugador */}
+          <span className="text-xs uppercase font-extrabold tracking-widest text-slate-400">
+            {playerName}
+          </span>
 
-          <div className="flex flex-col gap-1">
-            <span className="text-xs uppercase font-extrabold tracking-widest text-slate-400">
-              {playerName}
-            </span>
+          {/* Icono y Título del Rol */}
+          <div className="flex flex-col items-center gap-2">
+            <div
+              className={`w-14 h-14 rounded-2xl flex items-center justify-center ${
+                isImpostor
+                  ? 'bg-red-500/20 text-red-400 border border-red-500/30'
+                  : 'bg-lime-500/20 text-lime-400 border border-lime-500/30'
+              }`}
+            >
+              {isImpostor ? <Skull className="w-7 h-7" /> : <Shield className="w-7 h-7" />}
+            </div>
+
             <h2
-              className={`text-2xl md:text-3xl font-black uppercase tracking-wide ${
+              className={`text-2xl font-black tracking-tight uppercase ${
                 isImpostor ? 'text-red-400' : 'text-lime-400'
               }`}
             >
-              {isImpostor ? '¡Eres el Impostor!' : 'Eres Inocente'}
+              {isImpostor ? 'Eres el Impostor' : 'Eres Inocente'}
             </h2>
           </div>
 
-          {/* Información secreta */}
-          <div className="w-full bg-dark-950 border border-slate-800 rounded-2xl p-5 flex flex-col gap-3">
+          {/* Caja Central de Contenido Secreto */}
+          <div className="w-full bg-dark-950/90 border border-slate-800/90 rounded-2xl p-5 flex flex-col gap-3">
             {isImpostor ? (
-              <>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
-                    Categoría
-                  </span>
-                  <span className="text-base font-extrabold text-white">
-                    {currentAssignment.categoryName}
-                  </span>
-                </div>
+              <div className="flex flex-col items-center gap-2">
+                {sharedSettings.showCategoryToAll && (
+                  <div className="text-[11px] text-slate-400">
+                    Categoría: <strong className="text-white">{currentAssignment.categoryName}</strong>
+                  </div>
+                )}
 
                 {currentAssignment.hint ? (
-                  <div className="pt-2 border-t border-slate-800/80">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block flex items-center justify-center gap-1">
-                      <HelpCircle className="w-3 h-3" /> Pista del Impostor
+                  <div className="py-2 flex flex-col items-center">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400/90 flex items-center gap-1">
+                      <HelpCircle className="w-3 h-3" /> Pista del impostor (1 palabra)
                     </span>
-                    <span className="text-sm font-semibold text-slate-200 mt-0.5 block">
+                    <span className="text-3xl md:text-4xl font-black text-amber-300 tracking-wider mt-1 uppercase">
                       «{currentAssignment.hint}»
                     </span>
+                    <p className="text-[11px] text-slate-400 mt-2 text-center">
+                      Usa esta palabra para participar sin que sospechen de ti.
+                    </p>
                   </div>
                 ) : (
-                  <p className="text-xs text-slate-400">
-                    Sin pistas activas. ¡Descubre la palabra escuchando a los demás!
+                  <p className="text-xs text-slate-400 py-3">
+                    Modo sin pistas. ¡Escucha con atención lo que dicen los demás para adivinar la palabra!
                   </p>
                 )}
 
-                <p className="text-[11px] text-red-300 font-medium pt-1">
-                  Tu objetivo: Finge que conoces la palabra y no dejes que te descubran.
+                <p className="text-[11px] text-red-300/80 font-medium">
+                  Objetivo: Finge que conoces la palabra y evita que te voten.
                 </p>
-              </>
+              </div>
             ) : (
-              <>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
-                    Categoría
-                  </span>
-                  <span className="text-xs font-bold text-slate-300">
-                    {currentAssignment.categoryName}
-                  </span>
-                </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-[11px] text-slate-400">
+                  Categoría: <strong className="text-white">{currentAssignment.categoryName}</strong>
+                </span>
 
-                <div className="pt-2 border-t border-slate-800/80">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-lime-400 block">
+                <div className="py-2 flex flex-col items-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-lime-400/90">
                     Palabra Secreta
                   </span>
-                  <span className="text-2xl md:text-3xl font-black text-white tracking-wide block mt-1">
+                  <span className="text-3xl md:text-4xl font-black text-white tracking-wider mt-1">
                     {currentAssignment.word}
                   </span>
                 </div>
 
-                <p className="text-[11px] text-slate-400 pt-1">
-                  Tu objetivo: Da pistas que demuestren que sabes la palabra sin que el impostor la descubra.
+                <p className="text-[11px] text-slate-400">
+                  Objetivo: Da una pista inteligente sin ser demasiado obvio.
                 </p>
-              </>
+              </div>
             )}
           </div>
 
           <Button
-            size="xl"
+            size="lg"
             variant="secondary"
-            className="w-full py-4 text-base"
+            className="w-full py-3.5 text-sm font-bold border-slate-700/80 hover:border-slate-600 mt-1"
             onClick={hideAndNextSharedRole}
-            icon={<EyeOff className="w-5 h-5" />}
+            icon={<EyeOff className="w-4 h-4" />}
           >
-            {isLastPlayer ? 'Ocultar y comenzar debate' : 'Ocultar y pasar al siguiente'}
+            {isLastPlayer ? 'Listo, comenzar debate' : 'Listo, pasar al siguiente'}
           </Button>
         </Card>
       )}

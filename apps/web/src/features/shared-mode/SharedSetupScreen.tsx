@@ -303,11 +303,11 @@ export const SharedSetupScreen: React.FC = () => {
         {/* Pista del Impostor */}
         <div className="flex items-center justify-between py-1 border-b border-slate-800/80">
           <div>
-            <span className="text-sm font-bold text-white block">Pista para el Impostor</span>
+            <span className="text-sm font-bold text-white block">Pista para el Impostor (1 palabra)</span>
             <span className="text-xs text-slate-400">
               {sharedSettings.enableHints
-                ? 'El impostor recibe una pista general para orientarse'
-                : 'Sin pista: El impostor solo ve que es impostor'}
+                ? 'El impostor recibe una pista de 1 sola palabra para orientarse'
+                : 'Sin pista: El impostor solo ve su rol'}
             </span>
           </div>
           <button

@@ -14,25 +14,16 @@ describe('Pruebas del Frontend: El Impostor', () => {
     });
   });
 
-  it('debe renderizar la pantalla de inicio con título y botón principal de jugar', () => {
+  it('debe renderizar la pantalla de inicio con título y las dos modalidades directamente visibles', () => {
     render(<App />);
     const headings = screen.getAllByText(/EL IMPOSTOR/i);
     expect(headings.length).toBeGreaterThan(0);
-    expect(screen.getByText(/¡Jugar Ahora!/i)).toBeInTheDocument();
-  });
-
-  it('debe desplegar los dos modos de juego al hacer clic en ¡Jugar Ahora!', () => {
-    render(<App />);
-    const playBtn = screen.getByText(/¡Jugar Ahora!/i);
-    fireEvent.click(playBtn);
-
     expect(screen.getByText(/Dispositivo compartido/i)).toBeInTheDocument();
     expect(screen.getByText(/Multijugador online/i)).toBeInTheDocument();
   });
 
-  it('debe navegar a la pantalla de configuración del modo compartido', () => {
+  it('debe navegar a la pantalla de configuración del modo compartido al pulsar en su tarjeta', () => {
     render(<App />);
-    fireEvent.click(screen.getByText(/¡Jugar Ahora!/i));
     fireEvent.click(screen.getByText(/Dispositivo compartido/i));
 
     expect(screen.getByText(/Configurar Partida/i)).toBeInTheDocument();

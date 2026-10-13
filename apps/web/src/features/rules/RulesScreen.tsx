@@ -94,9 +94,8 @@ export const RulesScreen: React.FC = () => {
         </div>
         <div className="space-y-2 text-xs text-slate-300 leading-relaxed">
           <p>
-            <strong>Con pista (Recomendado para empezar):</strong> El impostor recibe una pista
-            general vinculada a la palabra (por ejemplo: si la palabra es <em>Travis Scott</em>, recibe
-            «Artista musical»). Le ayuda a integrarse sin revelar directamente la respuesta.
+            <strong>Con pista (1 sola palabra):</strong> El impostor recibe una pista de exactamente 
+            <strong> una sola palabra</strong> vinculada a la palabra secreta (por ejemplo: si la palabra es <em>Travis Scott</em>, recibe «Trap»; si es <em>Lionel Messi</em>, recibe «Zurdo»). Le ayuda a integrarse sin revelar directamente la respuesta.
           </p>
           <p>
             <strong>Sin pista (Modo experto):</strong> El impostor solo sabe que es el impostor y la
